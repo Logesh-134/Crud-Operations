@@ -1,5 +1,5 @@
     body {
-      font-family: Arial;
+      font-family: Arial, Helvetica, sans-serif;
       background-color: #f4f4f4;
     }
 
@@ -14,7 +14,7 @@
       background: white;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     .card h3 {
@@ -25,3 +25,49 @@
     .card p {
       color: #555;
     }
+
+
+    /* form control*/
+    #create {
+      padding: 20px;
+      background: rgb(241, 243, 246);
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-size: 25px;
+      border: 2px solid rgb(0, 3, 5);
+    
+    }
+
+
+    #title{
+      width: 50%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid  lightgray;
+      background-color: rgb(229, 223, 213);
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #body{
+      width: 50%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid  lightgray;
+      background-color:  rgb(229, 223, 213);
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+    }
+     
+    #btn{
+      background-color: rgb(18, 142, 18);
+      color: aliceblue;
+      width: 100px;
+      height: 35px;
+      border: 2px soloid whitesmoke;
+      box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+      font-size: 15px;
+    }
+    
