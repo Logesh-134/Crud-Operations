@@ -6,14 +6,28 @@
 </head>
 <body>
 
-<form id="create">
-<label for="heading">Data Form</label><br><br>
+<!-- Post Form (CREATE)-->
+<form id="create" method="POST">
+<label for="heading">User Post-Form</label><br><br>
 <input type="text" id="title" name="title" placeholder="Enter title here..." required><br><br>
 <textarea id="body" placeholder="Enter body here..." required></textarea><br><br>
 <input type="submit" value="Submit" id="btn">
 </form>
 
 <div id="app"></div>
+
+<!-- Edit Modal (UPDATE)-->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h3>Edit Post</h3><br>
+    <label for="heading">Title</label>
+    <input type="text" id="editTitle" name="editTitle"><br><br>
+    <label for="heading">Body</label>
+    <textarea id="editBody" name="editBody"></textarea><br><br><br>
+    <button id="saveBtn">Update</button>
+    <button id="closeBtn">Cancel</button>
+  </div>
+</div>
 
 <script src="script.js"></script>  
 </body>
