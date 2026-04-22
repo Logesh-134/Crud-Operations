@@ -63,7 +63,7 @@ fetch(apiFile)
   .catch((err) => console.log("Error:", err));
 
 // CREATE DATA AND SEND TO API
-const btn = document.getElementById("create");
+const form = document.getElementById("create");
 const titleInput = document.getElementById("title");
 const bodyInput = document.getElementById("body");
 
