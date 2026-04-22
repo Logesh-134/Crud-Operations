@@ -3,7 +3,7 @@ const apiFile = "https://jsonplaceholder.typicode.com/posts";
 
 const app = document.getElementById("app");
 
-// Fetch data from API
+// FETCH DATA FROM API
 fetch(apiFile)
   .then((resp) => resp.json())
   .then((gets) => {
@@ -30,7 +30,7 @@ fetch(apiFile)
       const btnContainer = document.createElement("div");
       btnContainer.className = "btn-group";
 
-      // Edit button
+      // Edit button(UPDATE)
       editBtn.addEventListener("click", function () {
         modal.style.display = "block";
 
@@ -41,6 +41,19 @@ fetch(apiFile)
         currentCard = card;
       });
 
+      // DELETE THE EXISTING DATA FROM API (DELETE)
+      deleteBtn.addEventListener("click", function () {
+        alert("Are you sure you want to delete this post?   ")  
+        fetch(`${apiFile}/${get.Id}`, {
+          method: "DELETE",
+        })
+          .then(() => {
+            card.remove();
+          })
+
+          .catch((err) => console.log("Error:", err));
+      });
+
       btnContainer.append(editBtn, deleteBtn);
       card.append(title, body, btnContainer);
       app.appendChild(card);
@@ -49,12 +62,12 @@ fetch(apiFile)
   // Error Handler
   .catch((err) => console.log("Error:", err));
 
-// Create data and send to API
-const form = document.getElementById("create");
+// CREATE DATA AND SEND TO API
+const btn = document.getElementById("create");
 const titleInput = document.getElementById("title");
 const bodyInput = document.getElementById("body");
 
-  btn.addEventListener("click", function (e) {
+btn.addEventListener("click", function (e) {
   e.preventDefault(); //prevent default reload on webpage
   alert("Form Submitted");
 
@@ -118,7 +131,7 @@ const bodyInput = document.getElementById("body");
     .catch((err) => console.log("Error:", err));
 });
 
-// Update the Existing data from API
+// UPDATE THE EXISTING DATA FROM API
 const modal = document.getElementById("modal");
 const editTitle = document.getElementById("editTitle");
 const editBody = document.getElementById("editBody");
@@ -127,6 +140,12 @@ const closeBtn = document.getElementById("closeBtn");
 
 let currentPostId = null;
 let currentCard = null;
+
+// modal remove
+// modal.addEventListener("click", function(e){
+//     if(e.target === modal);
+//   modal.remove()
+// }); 
 
 // Update button
 saveBtn.addEventListener("click", function () {
