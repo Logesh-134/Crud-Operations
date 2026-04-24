@@ -34,16 +34,20 @@ fetch(apiFile)
       editBtn.addEventListener("click", function () {
         modal.style.display = "block";
 
-        editTitle.value = get.title;
-        editBody.value = get.body;
+        // editTitle.value = get.title;
+        // editBody.value = get.body;
 
+        // ✅ use updated dataset instead of old API data
+        editTitle.value = card.dataset.title || get.title;
+        editBody.value = card.dataset.body || get.body;
+        
         currentPostId = get.id;
         currentCard = card;
       });
 
       // DELETE THE EXISTING DATA FROM API (DELETE)
       deleteBtn.addEventListener("click", function () {
-        alert("Are you sure you want to delete this post?   ")  
+        alert("Are you sure you want to delete this post?")  
         fetch(`${apiFile}/${get.Id}`, {
           method: "DELETE",
         })
@@ -69,15 +73,18 @@ const bodyInput = document.getElementById("body");
 
 btn.addEventListener("click", function (e) {
   e.preventDefault(); //prevent default reload on webpage
-  alert("Form Submitted");
-
-  //Check empty inputz
+  
+  //Check empty inputs
   const title = titleInput.value.trim();
   const body = bodyInput.value.trim();
 
   if (title === "" || body === "") {
+    alert("Please fill all fields!");
+    form.reset();
     return; // stop here (not API call, not create card)
   }
+
+  alert("Form Submitted");
 
   // create newPost object
   const newPost = {
@@ -141,11 +148,12 @@ const closeBtn = document.getElementById("closeBtn");
 let currentPostId = null;
 let currentCard = null;
 
-// modal remove
-// modal.addEventListener("click", function(e){
-//     if(e.target === modal);
-//   modal.remove()
-// }); 
+//When I click Outside modal, Its hides modal
+modal.addEventListener("click", function(e){
+    if(e.target === modal){
+      modal.style.display = "none";
+    }
+}); 
 
 // Update button
 saveBtn.addEventListener("click", function () {
@@ -173,8 +181,13 @@ saveBtn.addEventListener("click", function () {
   })
     .then((resp) => resp.json())
     .then((patch) => {
+
       currentCard.querySelector("h3").textContent = patch.title;
       currentCard.querySelector("p").textContent = patch.body;
+
+      //update stored data
+      currentCard.dataset.title = patch.title;
+      currentCard.dataset.body = patch.body;
 
       modal.style.display = "none";
     })
