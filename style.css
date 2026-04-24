@@ -147,6 +147,7 @@
     }
 
     #editBody {
+      resize: none;
       width: 75%;
       padding: 10px;
       font-size: 16px;
@@ -154,27 +155,29 @@
       border: 2px solid lightgray;
       background-color: rgb(244, 240, 233);
       box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-      height: 40px;
+      height: 30px;
+      
     }
 
     #saveBtn {
       background-color: rgb(18, 142, 18);
       color: black;
-      width: 75px;
-      height: 25px;
+      width: 80px;
+      height: 30px;
       box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
       font-size: 12px;
       border: none;
       outline: none;
       border-radius: 6px;
       color: #f4f4f4;
+      margin-right: 10px;
     }
 
     #closeBtn {
       background-color: rgb(200, 13, 13);
       color: black;
-      width: 75px;
-      height: 25px;
+      width: 80px;
+      height: 30px;
       box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
       font-size: 12px;
       border: none;
@@ -185,6 +188,7 @@
 
     }
 
-    #modal label {
+    label {
       font-weight: bold;
+      text-align: justify;
     }
