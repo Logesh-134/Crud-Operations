@@ -186,7 +186,7 @@ saveBtn.addEventListener("click", function () {
       currentCard.querySelector("p").textContent = patch.body;
 
       //update stored data
-      currentCard.dataset.title = patch.title;
+      currentCard.dataset.title = patch.title; 
       currentCard.dataset.body = patch.body;
 
       modal.style.display = "none";
