@@ -20,6 +20,10 @@
       flex-direction: column;
     }
 
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
     .card h3 {
       margin: 0 0 10px;
       color: #333;
@@ -156,7 +160,7 @@
       background-color: rgb(244, 240, 233);
       box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
       height: 30px;
-      
+
     }
 
     #saveBtn {
@@ -191,4 +195,27 @@
     label {
       font-weight: bold;
       text-align: justify;
+    }
+
+    /*Loading Btn*/
+    #loadMoreBtn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: #007bff;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    #loadMoreBtn:disabled {
+      background: #999;
+      cursor: not-allowed;
+    }
+
+    #loader {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
